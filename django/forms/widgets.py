@@ -454,7 +454,7 @@ class Textarea(Widget):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
-        return format_html('<textarea{}>\r\n{}</textarea>', flatatt(final_attrs), force_text(value))
+        return format_html(u'<textarea{}>\r\n{}</textarea>', flatatt(final_attrs), force_text(value))
 
 
 class DateTimeBaseInput(TextInput):
@@ -656,7 +656,7 @@ class ChoiceInput(SubWidget):
             label_for = ''
         attrs = dict(self.attrs, **attrs) if attrs else self.attrs
         return format_html(
-            '<label{}>{} {}</label>', label_for, self.tag(attrs), self.choice_label
+            u'<label{}>{} {}</label>', label_for, self.tag(attrs), self.choice_label
         )
 
     def is_checked(self):
